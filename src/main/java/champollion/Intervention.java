@@ -17,14 +17,16 @@ public class Intervention {
     private Enseignant e;
     private Date debut;
     private int duree;
-    private boolean annulee;
+    private boolean annulee = false;
+    private TypeIntervention type;
 
-    public Intervention(Salle s, UE u, Enseignant e, Date debut, int duree) {
+    public Intervention(Salle s, UE u, Enseignant e, Date debut, int duree, TypeIntervention type) {
         this.s = s;
         this.u = u;
         this.e = e;
         this.debut = debut;
         this.duree = duree;
+        this.type = type;
     }
 
     public Salle getS() {
@@ -41,6 +43,10 @@ public class Intervention {
 
     public Date getDebut() {
         return debut;
+    }
+    
+    public TypeIntervention getType() {
+        return type;
     }
 
     public int getDuree() {
@@ -66,12 +72,8 @@ public class Intervention {
     public void setDuree(int duree) {
         this.duree = duree;
     }
-    
-    
-    
-    
-    
-    
- 
-    
+
+    public void setType(TypeIntervention type) {
+        this.type = type;
+    }
 }
